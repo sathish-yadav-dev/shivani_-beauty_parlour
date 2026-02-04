@@ -3,319 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivani Luxury Beauty Studio | Mahabubnagar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Shivani Luxury Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #C5A059;
-            --dark-gold: #947231;
-            --black: #0F0F0F;
-            --white: #FFFFFF;
-            --gray: #f4f4f4;
+            --gold: #B8860B;
+            --black: #1a1a1a;
+            --soft-white: #f8f9fa;
         }
 
         body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--black);
-            color: var(--white);
-            overflow-x: hidden;
+            margin: 0; font-family: 'Poppins', sans-serif;
+            background: #f0f0f0; color: #333;
+            display: flex; flex-direction: column; align-items: center;
         }
 
-        /* Luxury Header */
-        .hero-section {
-            height: 50vh;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--black)),
-                        url('https://images.unsplash.com/photo-1522337360788-8b13df772ec2?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 3px solid var(--gold);
+        /* Compact Header */
+        header {
+            background: var(--black); width: 100%; color: var(--gold);
+            text-align: center; padding: 15px 0; border-bottom: 3px solid var(--gold);
+        }
+        header h1 { margin: 0; font-size: 1.5rem; letter-spacing: 3px; }
+        header p { margin: 0; font-size: 0.7rem; color: #fff; text-transform: uppercase; }
+
+        .main-app {
+            width: 95%; max-width: 500px; background: #fff;
+            margin: 15px 0; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        .hero-section h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin: 0;
-            letter-spacing: 8px;
-            color: var(--gold);
-        }
-
-        .hero-section p {
-            letter-spacing: 4px;
-            font-weight: 300;
-            font-style: italic;
-        }
-
-        .main-container {
-            max-width: 600px;
-            margin: -60px auto 40px auto;
-            background: var(--white);
-            color: var(--black);
-            border-radius: 30px 30px 10px 10px;
-            padding: 30px;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
-        }
-
-        .input-card {
-            background: var(--gray);
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            border-left: 4px solid var(--gold);
-            padding-left: 10px;
-            margin-bottom: 15px;
-            color: var(--black);
-        }
-
+        /* Details Section */
+        .section { padding: 15px; border-bottom: 1px solid #eee; }
         input, textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            width: 100%; padding: 10px; margin-top: 8px;
+            border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;
         }
 
-        /* Search & Filter */
-        .search-box {
-            position: sticky;
-            top: 10px;
-            z-index: 100;
-            background: var(--white);
-            padding: 10px 0;
+        /* Scrollable Service Area (Fixed Height to avoid long scroll) */
+        .service-area {
+            height: 250px; overflow-y: auto; background: var(--soft-white);
+            padding: 10px;
         }
 
-        #serviceSearch {
-            border: 2px solid var(--gold);
-            background: #fff;
-            font-weight: 600;
+        .srv-card {
+            background: #fff; padding: 10px; border-radius: 10px;
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 8px; border: 1px solid #eee;
         }
 
-        /* Service List Styling */
-        .service-list {
-            max-height: 400px;
-            overflow-y: auto;
-            padding-right: 5px;
+        .srv-info b { font-size: 0.9rem; display: block; }
+        .srv-info span { color: var(--gold); font-size: 0.8rem; font-weight: 600; }
+
+        .qty-box { display: flex; align-items: center; gap: 8px; }
+        .btn-q {
+            background: var(--black); color: var(--gold); border: none;
+            width: 25px; height: 25px; border-radius: 5px; cursor: pointer;
         }
 
-        .service-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            transition: 0.3s;
+        /* Bottom Fixed Bar Style */
+        .footer-billing {
+            padding: 15px; background: #fff; border-top: 2px solid var(--gold);
         }
 
-        .service-item:hover {
-            background: #fffdf5;
-        }
-
-        .srv-name { font-weight: 600; font-size: 0.95rem; }
-        .srv-price { color: var(--dark-gold); font-size: 0.9rem; display: block; }
-
-        /* Quantity Controls */
-        .qty-controls {
-            display: flex;
-            align-items: center;
-            background: var(--black);
-            border-radius: 8px;
-            padding: 4px 8px;
-        }
-
-        .qty-btn {
-            background: transparent;
-            color: var(--gold);
-            border: none;
-            font-size: 1.2rem;
-            width: 30px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .qty-val {
-            color: white;
-            margin: 0 10px;
-            min-width: 15px;
-            text-align: center;
-        }
-
-        /* Total Bar */
-        .total-sticky-bar {
-            background: var(--black);
-            color: var(--gold);
-            padding: 20px;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 25px;
+        .total-row {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 10px;
         }
 
         .whatsapp-btn {
-            width: 100%;
-            background: linear-gradient(45deg, #25D366, #128C7E);
-            color: white;
-            padding: 20px;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 15px;
-            text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            width: 100%; background: #25D366; color: white; border: none;
+            padding: 12px; border-radius: 10px; font-weight: 600; cursor: pointer;
+            font-size: 1rem; transition: 0.3s;
         }
 
-        .footer {
-            text-align: center;
-            padding: 30px;
-            background: var(--black);
-            color: #666;
-            font-size: 0.8rem;
+        .credit {
+            font-size: 0.7rem; text-align: center; color: #888; padding: 10px;
+            background: #fff; width: 100%;
         }
-
-        .highlight-text { color: var(--gold); font-weight: 600; }
+        .credit b { color: var(--black); }
     </style>
 </head>
 <body>
 
-    <div class="hero-section">
+    <header>
         <h1>SHIVANI</h1>
-        <p>LUXURY BEAUTY STUDIO</p>
-    </div>
+        <p>Mahabubnagar | 8309660870</p>
+    </header>
 
-    <div class="main-container">
-        <div class="section-title">1. Your Details</div>
-        <div class="input-card">
-            <input type="text" id="custName" placeholder="What is your full name?">
-            <textarea id="custAddress" rows="2" placeholder="Where should we come? (Full Address in Mahabubnagar)"></textarea>
+    <div class="main-app">
+        <div class="section">
+            <input type="text" id="custName" placeholder="Name">
+            <input type="text" id="custAddr" placeholder="Area / Address">
             <input type="datetime-local" id="bookTime">
         </div>
 
-        <div class="section-title">2. Select Services</div>
-        <div class="search-box">
-            <input type="text" id="serviceSearch" placeholder="🔍 Search e.g. 'Facial', 'Makeup', 'Saree'..." onkeyup="filterServices()">
+        <div style="padding: 10px 15px;">
+            <input type="text" id="search" placeholder="🔍 Search Service..." onkeyup="filter()">
         </div>
 
-        <div class="service-list" id="serviceList">
+        <div class="service-area" id="list">
             </div>
 
-        <div class="total-sticky-bar">
-            <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Estimated Billing</div>
-            <div id="totalAmt" style="font-size: 2.5rem; font-weight: 700;">₹ 0</div>
-        </div>
-
-        <button class="whatsapp-btn" onclick="sendWhatsApp()">Confirm & Send via WhatsApp</button>
-
-        <div class="footer">
-            <p>📍 Pan Chourastha, Main Road, Mahabubnagar</p>
-            <p>📞 Booking: <span class="highlight-text">8309660870</span></p>
-            <hr style="border: 0.1px solid #333; margin: 20px 0;">
-            <p style="letter-spacing: 2px;">DESIGNED BY <span class="highlight-text">SATISH YADAV</span></p>
+        <div class="footer-billing">
+            <div class="total-row">
+                <span style="font-weight: 600;">Grand Total:</span>
+                <span id="total" style="font-size: 1.4rem; font-weight: 700; color: var(--gold);">₹ 0</span>
+            </div>
+            <button class="whatsapp-btn" onclick="order()">Confirm Appointment</button>
         </div>
     </div>
 
+    <div class="credit">
+        Designed by <b>SATISH YADAV</b> | v2.0
+    </div>
+
     <script>
-        // ఇక్కడ నువ్వు 100+ సర్వీసులు యాడ్ చేసుకోవచ్చు
         const services = [
-            { id: 1, cat: "Makeup", name: "Party HD Makeup", price: 3000 },
-            { id: 2, cat: "Makeup", name: "Bridal Luxury Makeup", price: 10000 },
-            { id: 3, cat: "Hair", name: "Traditional Jada Styling", price: 1200 },
-            { id: 4, cat: "Hair", name: "Fancy Hair Cut", price: 600 },
-            { id: 5, cat: "Draping", name: "Saree Draping (Luxury)", price: 500 },
-            { id: 6, cat: "Facial", name: "Gold Glow Facial", price: 1500 },
-            { id: 7, cat: "Facial", name: "Hydra Facial Premium", price: 4000 },
-            { id: 8, cat: "Threading", name: "Eyebrows & UpperLip", price: 80 },
-            { id: 9, cat: "Waxing", name: "Full Body Waxing", price: 2500 },
-            { id: 10, cat: "Nails", name: "Luxury Pedicure", price: 800 }
+            { id: 1, n: "Party Makeup", p: 2500 },
+            { id: 2, n: "Bridal Makeup", p: 8000 },
+            { id: 3, n: "Traditional Jada", p: 1200 },
+            { id: 4, n: "Saree Draping", p: 500 },
+            { id: 5, n: "Gold Facial", p: 1500 },
+            { id: 6, n: "Hair Cut", p: 500 },
+            { id: 7, n: "Eyebrows", p: 50 },
+            { id: 8, n: "Manicure", p: 600 }
         ];
 
         let cart = {};
 
-        function loadServices() {
-            const container = document.getElementById('serviceList');
-            container.innerHTML = '';
-            services.forEach(s => {
-                const div = document.createElement('div');
-                div.className = 'service-item';
-                div.innerHTML = `
-                    <div class="service-info">
-                        <span class="srv-name">${s.name}</span>
-                        <span class="srv-price">₹${s.price}</span>
+        function render() {
+            const list = document.getElementById('list');
+            list.innerHTML = services.map(s => `
+                <div class="srv-card">
+                    <div class="srv-info">
+                        <b>${s.n}</b>
+                        <span>₹${s.p}</span>
                     </div>
-                    <div class="qty-controls">
-                        <button class="qty-btn" onclick="changeQty(${s.id}, -1)">−</button>
-                        <span class="qty-val" id="q-${s.id}">0</span>
-                        <button class="qty-btn" onclick="changeQty(${s.id}, 1)">+</button>
+                    <div class="qty-box">
+                        <button class="btn-q" onclick="change(${s.id},-1)">-</button>
+                        <span id="q-${s.id}" style="font-weight:600">0</span>
+                        <button class="btn-q" onclick="change(${s.id},1)">+</button>
                     </div>
-                `;
-                container.appendChild(div);
-            });
+                </div>
+            `).join('');
         }
 
-        function changeQty(id, delta) {
-            cart[id] = (cart[id] || 0) + delta;
+        function change(id, d) {
+            cart[id] = (cart[id] || 0) + d;
             if (cart[id] < 0) cart[id] = 0;
             document.getElementById(`q-${id}`).innerText = cart[id];
-            updateTotal();
-        }
-
-        function updateTotal() {
             let total = 0;
-            services.forEach(s => {
-                if(cart[s.id]) total += (s.price * cart[s.id]);
-            });
-            document.getElementById('totalAmt').innerText = "₹ " + total.toLocaleString('en-IN');
+            services.forEach(s => { if(cart[s.id]) total += (s.p * cart[s.id]); });
+            document.getElementById('total').innerText = "₹ " + total;
         }
 
-        function filterServices() {
-            const term = document.getElementById('serviceSearch').value.toLowerCase();
-            const items = document.querySelectorAll('.service-item');
-            items.forEach(item => {
-                const name = item.querySelector('.srv-name').innerText.toLowerCase();
-                item.style.display = name.includes(term) ? 'flex' : 'none';
+        function filter() {
+            let val = document.getElementById('search').value.toLowerCase();
+            document.querySelectorAll('.srv-card').forEach(el => {
+                el.style.display = el.innerText.toLowerCase().includes(val) ? 'flex' : 'none';
             });
         }
 
-        function sendWhatsApp() {
-            const name = document.getElementById('custName').value;
-            const addr = document.getElementById('custAddress').value;
-            const time = document.getElementById('bookTime').value;
-            const total = document.getElementById('totalAmt').innerText;
-            
-            let summary = [];
-            services.forEach(s => {
-                if(cart[s.id] > 0) summary.push(`${s.name} x${cart[s.id]}`);
-            });
+        function order() {
+            const n = document.getElementById('custName').value;
+            const a = document.getElementById('custAddr').value;
+            const t = document.getElementById('bookTime').value;
+            let items = [];
+            services.forEach(s => { if(cart[s.id]>0) items.push(`${s.n} (x${cart[s.id]})`); });
 
-            if(!name || summary.length === 0 || !time || !addr) {
-                alert("Please fill all details and select at least one service!");
-                return;
-            }
+            if(!n || items.length === 0 || !t) return alert("Fill all details!");
 
-            const phone = "918309660870";
-            let msg = `*✨ SHIVANI LUXURY STUDIO BOOKING ✨*%0A%0A` +
-                      `*Client:* ${name}%0A` +
-                      `*Venue:* ${addr}%0A` +
-                      `*Time:* ${time}%0A%0A` +
-                      `*Services Ordered:*%0A- ${summary.join('%0A- ')}%0A%0A` +
-                      `*Total Amount:* ${total}%0A%0A` +
-                      `Hi Shivani, I want to confirm this booking. See you soon!`;
-
-            window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+            let msg = `*Shivani Studio Booking*%0A*Name:* ${n}%0A*Address:* ${a}%0A*Time:* ${t}%0A*Services:* ${items.join(', ')}%0A*Total:* ${document.getElementById('total').innerText}`;
+            window.open(`https://wa.me/918309660870?text=${msg}`);
         }
 
-        window.onload = loadServices;
+        render();
     </script>
 </body>
 </html>
