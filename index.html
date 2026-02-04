@@ -6,116 +6,69 @@
     <title>Shivani Luxury Studio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #B8860B;
-            --black: #1a1a1a;
-            --soft-white: #f8f9fa;
-        }
+        :root { --gold: #B8860B; --black: #1a1a1a; }
+        body { margin: 0; font-family: 'Poppins', sans-serif; background: #f4f4f4; display: flex; flex-direction: column; align-items: center; }
+        
+        header { background: var(--black); width: 100%; color: var(--gold); text-align: center; padding: 12px 0; border-bottom: 3px solid var(--gold); }
+        header h1 { margin: 0; font-size: 1.3rem; letter-spacing: 2px; }
 
-        body {
-            margin: 0; font-family: 'Poppins', sans-serif;
-            background: #f0f0f0; color: #333;
-            display: flex; flex-direction: column; align-items: center;
-        }
+        .main-app { width: 92%; max-width: 450px; background: #fff; margin: 15px 0; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding-bottom: 10px; }
+        .section { padding: 15px; }
+        input { width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-size: 0.9rem; }
 
-        /* Compact Header */
-        header {
-            background: var(--black); width: 100%; color: var(--gold);
-            text-align: center; padding: 15px 0; border-bottom: 3px solid var(--gold);
-        }
-        header h1 { margin: 0; font-size: 1.5rem; letter-spacing: 3px; }
-        header p { margin: 0; font-size: 0.7rem; color: #fff; text-transform: uppercase; }
+        /* Search Section */
+        #search { border: 2px solid var(--gold); outline: none; background: #fff9e6; }
+        
+        /* Hidden by default, shown when searching */
+        .service-results { max-height: 200px; overflow-y: auto; display: none; margin: 0 15px; border: 1px solid #eee; border-radius: 10px; background: #fff; }
+        
+        /* Selected Items List */
+        .cart-title { font-size: 0.8rem; font-weight: 700; color: #888; margin: 10px 15px 5px; text-transform: uppercase; }
+        .selected-list { margin: 0 15px; }
 
-        .main-app {
-            width: 95%; max-width: 500px; background: #fff;
-            margin: 15px 0; border-radius: 20px; overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
+        .srv-card { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #f9f9f9; }
+        .srv-info b { font-size: 0.85rem; }
+        .srv-info span { color: var(--gold); font-size: 0.8rem; }
 
-        /* Details Section */
-        .section { padding: 15px; border-bottom: 1px solid #eee; }
-        input, textarea {
-            width: 100%; padding: 10px; margin-top: 8px;
-            border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;
-        }
+        .qty-box { display: flex; align-items: center; gap: 10px; }
+        .btn-q { background: var(--black); color: var(--gold); border: none; width: 24px; height: 24px; border-radius: 5px; cursor: pointer; }
 
-        /* Scrollable Service Area (Fixed Height to avoid long scroll) */
-        .service-area {
-            height: 250px; overflow-y: auto; background: var(--soft-white);
-            padding: 10px;
-        }
-
-        .srv-card {
-            background: #fff; padding: 10px; border-radius: 10px;
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 8px; border: 1px solid #eee;
-        }
-
-        .srv-info b { font-size: 0.9rem; display: block; }
-        .srv-info span { color: var(--gold); font-size: 0.8rem; font-weight: 600; }
-
-        .qty-box { display: flex; align-items: center; gap: 8px; }
-        .btn-q {
-            background: var(--black); color: var(--gold); border: none;
-            width: 25px; height: 25px; border-radius: 5px; cursor: pointer;
-        }
-
-        /* Bottom Fixed Bar Style */
-        .footer-billing {
-            padding: 15px; background: #fff; border-top: 2px solid var(--gold);
-        }
-
-        .total-row {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .whatsapp-btn {
-            width: 100%; background: #25D366; color: white; border: none;
-            padding: 12px; border-radius: 10px; font-weight: 600; cursor: pointer;
-            font-size: 1rem; transition: 0.3s;
-        }
-
-        .credit {
-            font-size: 0.7rem; text-align: center; color: #888; padding: 10px;
-            background: #fff; width: 100%;
-        }
-        .credit b { color: var(--black); }
+        .footer-billing { padding: 15px; border-top: 1px solid #eee; margin-top: 10px; }
+        .total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; padding: 14px; border-radius: 12px; font-weight: 600; font-size: 1rem; cursor: pointer; }
+        .credit { font-size: 0.7rem; color: #999; text-align: center; padding: 10px; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>SHIVANI</h1>
-        <p>Mahabubnagar | 8309660870</p>
+        <h1>SHIVANI LUXURY STUDIO</h1>
+        <p style="margin:0; font-size:0.6rem; color:#fff;">MAHABUBNAGAR | 8309660870</p>
     </header>
 
     <div class="main-app">
         <div class="section">
-            <input type="text" id="custName" placeholder="Name">
-            <input type="text" id="custAddr" placeholder="Area / Address">
+            <input type="text" id="custName" placeholder="Customer Name">
+            <input type="text" id="custAddr" placeholder="Address / Location">
             <input type="datetime-local" id="bookTime">
+            <input type="text" id="search" placeholder="🔍 Type to search services (e.g. Makeup)" onkeyup="filter()">
         </div>
 
-        <div style="padding: 10px 15px;">
-            <input type="text" id="search" placeholder="🔍 Search Service..." onkeyup="filter()">
-        </div>
+        <div class="service-results" id="results"></div>
 
-        <div class="service-area" id="list">
-            </div>
+        <div class="cart-title" id="cartLabel" style="display:none;">Selected Services</div>
+        <div class="selected-list" id="cartList"></div>
 
         <div class="footer-billing">
             <div class="total-row">
-                <span style="font-weight: 600;">Grand Total:</span>
+                <span style="font-weight: 600;">Total:</span>
                 <span id="total" style="font-size: 1.4rem; font-weight: 700; color: var(--gold);">₹ 0</span>
             </div>
-            <button class="whatsapp-btn" onclick="order()">Confirm Appointment</button>
+            <button class="whatsapp-btn" onclick="order()">Book on WhatsApp</button>
         </div>
     </div>
 
-    <div class="credit">
-        Designed by <b>SATISH YADAV</b> | v2.0
-    </div>
+    <div class="credit">Designed by <b>SATISH YADAV</b></div>
 
     <script>
         const services = [
@@ -125,43 +78,66 @@
             { id: 4, n: "Saree Draping", p: 500 },
             { id: 5, n: "Gold Facial", p: 1500 },
             { id: 6, n: "Hair Cut", p: 500 },
-            { id: 7, n: "Eyebrows", p: 50 },
-            { id: 8, n: "Manicure", p: 600 }
+            { id: 7, n: "Eyebrows", p: 50 }
         ];
 
         let cart = {};
 
-        function render() {
-            const list = document.getElementById('list');
-            list.innerHTML = services.map(s => `
-                <div class="srv-card">
-                    <div class="srv-info">
-                        <b>${s.n}</b>
-                        <span>₹${s.p}</span>
-                    </div>
-                    <div class="qty-box">
-                        <button class="btn-q" onclick="change(${s.id},-1)">-</button>
-                        <span id="q-${s.id}" style="font-weight:600">0</span>
-                        <button class="btn-q" onclick="change(${s.id},1)">+</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function change(id, d) {
-            cart[id] = (cart[id] || 0) + d;
-            if (cart[id] < 0) cart[id] = 0;
-            document.getElementById(`q-${id}`).innerText = cart[id];
-            let total = 0;
-            services.forEach(s => { if(cart[s.id]) total += (s.p * cart[s.id]); });
-            document.getElementById('total').innerText = "₹ " + total;
-        }
-
         function filter() {
             let val = document.getElementById('search').value.toLowerCase();
-            document.querySelectorAll('.srv-card').forEach(el => {
-                el.style.display = el.innerText.toLowerCase().includes(val) ? 'flex' : 'none';
-            });
+            let res = document.getElementById('results');
+            
+            if (val.length > 0) {
+                res.style.display = 'block';
+                let filtered = services.filter(s => s.n.toLowerCase().includes(val));
+                res.innerHTML = filtered.map(s => `
+                    <div class="srv-card" onclick="addToCart(${s.id})">
+                        <div class="srv-info"><b>${s.n}</b><br><span>₹${s.p}</span></div>
+                        <span style="color:var(--gold); font-size:1.2rem; font-weight:bold;">+</span>
+                    </div>
+                `).join('');
+            } else {
+                res.style.display = 'none';
+            }
+        }
+
+        function addToCart(id) {
+            cart[id] = (cart[id] || 0) + 1;
+            document.getElementById('search').value = '';
+            document.getElementById('results').style.display = 'none';
+            updateUI();
+        }
+
+        function changeQty(id, d) {
+            cart[id] += d;
+            if (cart[id] <= 0) delete cart[id];
+            updateUI();
+        }
+
+        function updateUI() {
+            const list = document.getElementById('cartList');
+            const label = document.getElementById('cartLabel');
+            let total = 0;
+            let keys = Object.keys(cart);
+
+            label.style.display = keys.length > 0 ? 'block' : 'none';
+            
+            list.innerHTML = keys.map(id => {
+                let s = services.find(item => item.id == id);
+                total += (s.p * cart[id]);
+                return `
+                    <div class="srv-card">
+                        <div class="srv-info"><b>${s.n}</b><br><span>₹${s.p}</span></div>
+                        <div class="qty-box">
+                            <button class="btn-q" onclick="changeQty(${id},-1)">-</button>
+                            <span style="font-weight:600">${cart[id]}</span>
+                            <button class="btn-q" onclick="changeQty(${id},1)">+</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            document.getElementById('total').innerText = "₹ " + total;
         }
 
         function order() {
@@ -169,15 +145,16 @@
             const a = document.getElementById('custAddr').value;
             const t = document.getElementById('bookTime').value;
             let items = [];
-            services.forEach(s => { if(cart[s.id]>0) items.push(`${s.n} (x${cart[s.id]})`); });
+            Object.keys(cart).forEach(id => {
+                let s = services.find(item => item.id == id);
+                items.push(`${s.n} (x${cart[id]})`);
+            });
 
-            if(!n || items.length === 0 || !t) return alert("Fill all details!");
+            if(!n || items.length === 0 || !t) return alert("Please fill all details!");
 
             let msg = `*Shivani Studio Booking*%0A*Name:* ${n}%0A*Address:* ${a}%0A*Time:* ${t}%0A*Services:* ${items.join(', ')}%0A*Total:* ${document.getElementById('total').innerText}`;
             window.open(`https://wa.me/918309660870?text=${msg}`);
         }
-
-        render();
     </script>
 </body>
 </html>
