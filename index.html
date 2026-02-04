@@ -3,292 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivani Luxury Beauty Studio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>SATHISH YADAV | Pro Downloader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --gold: #D4AF37;
-            --black: #111;
-            --white: #fff;
-            --soft-bg: #fdfaf7;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            color: var(--black);
-        }
-
-        .header {
-            text-align: center;
-            padding: 30px 20px;
-            color: var(--gold);
-        }
-
-        .header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin: 0;
-            letter-spacing: 4px;
+        body { background: #0b0f19; color: white; font-family: 'Segoe UI', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { background: #161d2f; padding: 30px; border-radius: 25px; text-align: center; width: 85%; max-width: 380px; border: 1px solid #2e3a59; box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
+        
+        .name-brand { 
+            font-size: 14px; 
+            font-weight: 800; 
+            letter-spacing: 3px; 
+            color: #fff; 
+            background: #4f46e5;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
-
-        .container {
-            max-width: 550px;
-            margin: 0 auto 30px auto;
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 25px;
-            padding: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            border: 2px solid var(--gold);
-        }
-
-        .section-title {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin: 20px 0 10px 0;
-            border-bottom: 2px solid var(--soft-bg);
-            padding-bottom: 5px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 1rem;
-            box-sizing: border-box;
-            margin-bottom: 10px;
-        }
-
-        /* Service List with Quantity */
-        .service-list {
-            max-height: 350px;
-            overflow-y: auto;
-            border: 1px solid #eee;
-            border-radius: 15px;
-            background: #fff;
-            margin-bottom: 20px;
-        }
-
-        .service-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 15px;
-            border-bottom: 1px solid #f9f9f9;
-        }
-
-        .service-info { flex: 1; }
-        .service-name { font-weight: 600; display: block; font-size: 0.95rem; }
-        .service-price { color: var(--gold); font-size: 0.85rem; font-weight: bold; }
-
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .qty-btn {
-            background: var(--gold);
-            color: white;
-            border: none;
-            width: 28px;
-            height: 28px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .qty-count {
-            width: 20px;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .price-box {
-            background: var(--black);
-            color: var(--gold);
-            border-radius: 15px;
-            padding: 15px;
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .whatsapp-btn {
-            width: 100%;
-            background: #25D366;
-            color: white;
-            padding: 18px;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .footer-note {
-            text-align: center;
-            font-size: 0.85rem;
-            margin-top: 15px;
-            color: #444;
-        }
-
-        .designer-credit {
-            text-align: center;
-            color: rgba(255,255,255,0.8);
-            font-size: 0.75rem;
-            padding-bottom: 20px;
-            text-transform: uppercase;
+        
+        .social-icons { font-size: 22px; margin-bottom: 12px; display: flex; justify-content: center; gap: 20px; opacity: 0.9; }
+        .fa-instagram { color: #e1306c; }
+        .fa-youtube { color: #ff0000; }
+        
+        .downloader-text { 
+            font-size: 24px; 
+            font-weight: 900; 
+            color: #4f46e5;
+            margin-bottom: 25px; 
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
+
+        input { width: 100%; padding: 16px; border-radius: 12px; border: 2px solid #2e3a59; background: #0b0f19; color: white; margin-bottom: 20px; box-sizing: border-box; font-size: 15px; outline: none; }
+        
+        .main-btn { 
+            background: linear-gradient(45deg, #4f46e5, #3b82f6); 
+            color: white; 
+            padding: 16px; 
+            border: none; 
+            border-radius: 12px; 
+            width: 100%; 
+            font-weight: bold; 
+            font-size: 16px; 
+            cursor: pointer; 
+            transition: 0.2s; 
+        }
+        .main-btn:active { transform: scale(0.96); }
+        
+        .footer { margin-top: 25px; font-size: 10px; color: #94a3b8; opacity: 0.4; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>SHIVANI</h1>
-        <p style="color: #fff; letter-spacing: 3px; font-weight: 300;">LUXURY BEAUTY STUDIO</p>
-    </div>
-
-    <div class="container">
-        <div class="section-title">Client Information</div>
-        <input type="text" id="custName" placeholder="Full Name">
-        <textarea id="custAddress" rows="2" placeholder="Full Address / Venue Location"></textarea>
+    <div class="card">
+        <div class="name-brand">SATHISH YADAV</div>
         
-        <div class="section-title">Services & Quantity</div>
-        <input type="text" id="serviceSearch" placeholder="🔍 Search services..." onkeyup="filterServices()" style="border: 2px solid var(--gold);">
-
-        <div class="service-list" id="serviceList">
-            </div>
-
-        <div class="section-title">Booking Schedule</div>
-        <input type="datetime-local" id="bookTime">
-
-        <div class="price-box">
-            <span style="font-size: 0.8rem; color: #fff;">Grand Total Estimate</span><br>
-            <span id="totalAmt" style="font-size: 2.2rem; font-weight: 700;">₹ 0</span>
+        <div class="social-icons">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
         </div>
-
-        <button class="whatsapp-btn" onclick="sendWhatsApp()">Confirm & Book on WhatsApp</button>
         
-        <div class="footer-note">
-            <strong>SHIVANI BEAUTY PARLOUR</strong><br>
-            📍 Pan Chourastha, Mahabubnagar | 📞 8309660870
-        </div>
-    </div>
-
-    <div class="designer-credit">
-        Designed by <strong>SATISH YADAV</strong>
+        <div class="downloader-text">PRO DOWNLOADER</div>
+        
+        <input type="text" id="vUrl" placeholder="Paste Video Link Here...">
+        
+        <button class="main-btn" onclick="startDownload()">
+            <i class="fas fa-bolt"></i> DOWNLOAD NOW
+        </button>
+        
+        <div class="footer">SATHISH SERVER v4.0 • FAST & SECURE</div>
     </div>
 
     <script>
-        // ఇక్కడ నువ్వు 100-200 సర్వీసులు యాడ్ చేసుకోవచ్చు
-        const services = [
-            { id: 1, name: "Party Makeup", price: 2500 },
-            { id: 2, name: "Traditional Jada", price: 1000 },
-            { id: 3, name: "Saree Draping", price: 500 },
-            { id: 4, name: "Bridal HD Makeup", price: 8000 },
-            { id: 5, name: "Gold Facial", price: 1500 },
-            { id: 6, name: "Eyebrow Threading", price: 50 },
-            { id: 7, name: "Hair Spa", price: 1000 },
-            { id: 8, name: "Pedicure & Manicure", price: 1200 },
-            { id: 9, name: "Full Arms Waxing", price: 400 },
-            { id: 10, name: "Hair Cut (Step)", price: 600 }
-        ];
-
-        let cart = {}; 
-
-        function loadServices() {
-            const listContainer = document.getElementById('serviceList');
-            listContainer.innerHTML = '';
-            services.forEach(s => {
-                const item = document.createElement('div');
-                item.className = 'service-item';
-                item.innerHTML = `
-                    <div class="service-info">
-                        <span class="service-name">${s.name}</span>
-                        <span class="service-price">₹${s.price}</span>
-                    </div>
-                    <div class="quantity-controls">
-                        <button class="qty-btn" onclick="updateQty(${s.id}, -1)">-</button>
-                        <span class="qty-count" id="qty-${s.id}">0</span>
-                        <button class="qty-btn" onclick="updateQty(${s.id}, 1)">+</button>
-                    </div>
-                `;
-                listContainer.appendChild(item);
-            });
-        }
-
-        function updateQty(id, change) {
-            if (!cart[id]) cart[id] = 0;
-            cart[id] += change;
-            if (cart[id] < 0) cart[id] = 0;
+        function startDownload() {
+            let u = document.getElementById('vUrl').value.trim();
+            if(!u) { alert("Please paste a link first!"); return; }
             
-            document.getElementById(`qty-${id}`).innerText = cart[id];
-            calculateTotal();
-        }
-
-        function calculateTotal() {
-            let total = 0;
-            services.forEach(s => {
-                if (cart[s.id]) {
-                    total += (s.price * cart[s.id]);
-                }
-            });
-            document.getElementById('totalAmt').innerText = "₹ " + total;
-        }
-
-        function filterServices() {
-            const term = document.getElementById('serviceSearch').value.toLowerCase();
-            const items = document.querySelectorAll('.service-item');
-            items.forEach(item => {
-                const name = item.querySelector('.service-name').innerText.toLowerCase();
-                item.style.display = name.includes(term) ? 'flex' : 'none';
-            });
-        }
-
-        function sendWhatsApp() {
-            const name = document.getElementById('custName').value;
-            const address = document.getElementById('custAddress').value;
-            const time = document.getElementById('bookTime').value;
-            const total = document.getElementById('totalAmt').innerText;
+            /* ముఖ్యమైన మార్పు: 
+               Publer కి వెళ్లేటప్పుడు '?url=' తో పాటు లింక్ ని పంపుతున్నాం.
+               దీనివల్ల పబ్లర్ సైట్ ఓపెన్ అవ్వగానే ఆ లింక్ ని రీడ్ చేసి సేవ్ ఆప్షన్ చూపిస్తుంది.
+            */
+            let finalServer = "https://publer.io/tools/media-downloader?url=" + encodeURIComponent(u);
             
-            let selectedServices = [];
-            services.forEach(s => {
-                if (cart[s.id] > 0) {
-                    selectedServices.push(`${s.name} (Qty: ${cart[s.id]})`);
-                }
-            });
-
-            if (!name || selectedServices.length === 0 || !time || !address) {
-                alert("దయచేసి పేరు, అడ్రస్, మరియు సర్వీసెస్ ఎంచుకోండి!");
-                return;
-            }
-
-            const phone = "918309660870";
-            let msg = `*SHIVANI LUXURY STUDIO - NEW BOOKING*%0A%0A` +
-                      `*Customer:* ${name}%0A` +
-                      `*Address:* ${address}%0A` +
-                      `*Schedule:* ${time}%0A%0A` +
-                      `*Selected Services:*%0A- ${selectedServices.join('%0A- ')}%0A%0A` +
-                      `*Grand Total:* ${total}%0A%0A` +
-                      `Hi Shivani, I want to confirm this booking.`;
-
-            window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+            // నేరుగా పబ్లర్ కి డైరెక్ట్ చేస్తుంది
+            window.location.href = finalServer;
         }
-
-        loadServices();
     </script>
+
 </body>
 </html>
