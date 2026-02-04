@@ -3,91 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SATHISH YADAV | Pro Downloader</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Shivani Beauty Parlour | Luxury Home Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { background: #0b0f19; color: white; font-family: 'Segoe UI', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .card { background: #161d2f; padding: 30px; border-radius: 25px; text-align: center; width: 85%; max-width: 380px; border: 1px solid #2e3a59; box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
-        
-        .name-brand { 
-            font-size: 14px; 
-            font-weight: 800; 
-            letter-spacing: 3px; 
-            color: #fff; 
-            background: #4f46e5;
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 50px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+        :root {
+            --gold: #C5A059;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --bg: #fcfaf7;
         }
-        
-        .social-icons { font-size: 22px; margin-bottom: 12px; display: flex; justify-content: center; gap: 20px; opacity: 0.9; }
-        .fa-instagram { color: #e1306c; }
-        .fa-youtube { color: #ff0000; }
-        
-        .downloader-text { 
-            font-size: 24px; 
-            font-weight: 900; 
-            color: #4f46e5;
-            margin-bottom: 25px; 
-            letter-spacing: 1px;
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--black);
+        }
+
+        /* Header Section */
+        header {
+            background-color: var(--black);
+            color: var(--gold);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
-        input { width: 100%; padding: 16px; border-radius: 12px; border: 2px solid #2e3a59; background: #0b0f19; color: white; margin-bottom: 20px; box-sizing: border-box; font-size: 15px; outline: none; }
-        
-        .main-btn { 
-            background: linear-gradient(45deg, #4f46e5, #3b82f6); 
-            color: white; 
-            padding: 16px; 
-            border: none; 
-            border-radius: 12px; 
-            width: 100%; 
-            font-weight: bold; 
-            font-size: 16px; 
-            cursor: pointer; 
-            transition: 0.2s; 
+        header .location {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            font-weight: 300;
         }
-        .main-btn:active { transform: scale(0.96); }
-        
-        .footer { margin-top: 25px; font-size: 10px; color: #94a3b8; opacity: 0.4; letter-spacing: 1px; }
+
+        /* Booking Form Container */
+        .container {
+            max-width: 650px;
+            margin: -40px auto 60px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--black);
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .form-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            color: #444;
+            text-transform: uppercase;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 8px rgba(197, 160, 89, 0.2);
+        }
+
+        .service-info {
+            background: #fff9f0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Button */
+        .btn-booking {
+            width: 100%;
+            background-color: #25D366;
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .btn-booking:hover {
+            background-color: #1ebd5b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            .form-section { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+            header h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <div class="name-brand">SATHISH YADAV</div>
-        
-        <div class="social-icons">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-youtube"></i>
+    <header>
+        <h1>SHIVANI</h1>
+        <div style="font-size: 1.4rem; font-family: 'Playfair Display'; font-style: italic;">Beauty Parlour</div>
+        <div class="location">Mahabubnagar Pan Chourastha</div>
+    </header>
+
+    <div class="container">
+        <h2>Premium Booking Form</h2>
+
+        <div class="service-info">
+            ✨ <b>Specialty:</b> We provide Home Services for Haldi, Sangeet & Weddings!
         </div>
         
-        <div class="downloader-text">PRO DOWNLOADER</div>
-        
-        <input type="text" id="vUrl" placeholder="Paste Video Link Here...">
-        
-        <button class="main-btn" onclick="startDownload()">
-            <i class="fas fa-bolt"></i> DOWNLOAD NOW
-        </button>
-        
-        <div class="footer">SATHISH SERVER v4.0 • FAST & SECURE</div>
+        <form id="bookingForm">
+            <div class="form-section">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Contact Number" required>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>Select Service</label>
+                    <select id="service">
+                        <option value="" disabled selected>Choose a service...</option>
+                        <optgroup label="Hair & Traditional Styles">
+                            <option value="Traditional Hair Braiding (Jada)">Traditional Hair Braiding (Jada)</option>
+                            <option value="Bridal Flower Jada">Bridal Flower Jada (Poola Jada)</option>
+                            <option value="Hair Styling & Buns">Modern Hair Styling & Buns</option>
+                        </optgroup>
+                        <optgroup label="Saree & Draping">
+                            <option value="Saree Draping / Pleating">Saree Draping & Pleating</option>
+                            <option value="Traditional Saree Folding">Traditional Saree Folding</option>
+                        </optgroup>
+                        <optgroup label="Makeup & Functions">
+                            <option value="Haldi / Mehendi Makeup">Haldi / Mehendi Special Makeup</option>
+                            <option value="Bridal Makeup Package">Full Bridal Makeup</option>
+                            <option value="Guest/Family Makeup">Guest & Family Member Makeup</option>
+                        </optgroup>
+                        <optgroup label="Mehendi Designs">
+                            <option value="Bridal Mehendi">Bridal Mehendi (Full Hand)</option>
+                            <option value="Simple Arabic Mehendi">Simple Arabic Mehendi</option>
+                        </optgroup>
+                        <optgroup label="Regular Services">
+                            <option value="Luxury Facial">Luxury Facial & Glow</option>
+                            <option value="Threading & Waxing">Threading & Full Body Waxing</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Number of People</label>
+                    <input type="number" id="persons" min="1" value="1">
+                </div>
+
+                <div class="input-group">
+                    <label>Date & Time</label>
+                    <input type="datetime-local" id="datetime" required>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>Your Full Address (For Home Service)</label>
+                    <textarea id="address" rows="3" placeholder="Enter your home address for our team to visit..."></textarea>
+                </div>
+            </div>
+
+            <button type="button" class="btn-booking" onclick="sendToWhatsApp()">
+                Book via WhatsApp
+            </button>
+        </form>
     </div>
 
+    <footer>
+        &copy; 2026 Shivani Beauty Parlour | Mahabubnagar Pan Chourastha
+    </footer>
+
     <script>
-        function startDownload() {
-            let u = document.getElementById('vUrl').value.trim();
-            if(!u) { alert("Please paste a link first!"); return; }
-            
-            /* ముఖ్యమైన మార్పు: 
-               Publer కి వెళ్లేటప్పుడు '?url=' తో పాటు లింక్ ని పంపుతున్నాం.
-               దీనివల్ల పబ్లర్ సైట్ ఓపెన్ అవ్వగానే ఆ లింక్ ని రీడ్ చేసి సేవ్ ఆప్షన్ చూపిస్తుంది.
-            */
-            let finalServer = "https://publer.io/tools/media-downloader?url=" + encodeURIComponent(u);
-            
-            // నేరుగా పబ్లర్ కి డైరెక్ట్ చేస్తుంది
-            window.location.href = finalServer;
+        function sendToWhatsApp() {
+            // మీ వాట్సాప్ నెంబర్ ఇక్కడ మార్చండి
+            const myMobile = "918309660870"; 
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const persons = document.getElementById('persons').value;
+            const datetime = document.getElementById('datetime').value;
+            const userAddress = document.getElementById('address').value;
+
+            if(!name || !phone || !service || !datetime || !userAddress) {
+                alert("Please fill all details including your address!");
+                return;
+            }
+
+            const message = `*NEW BOOKING - SHIVANI PARLOUR*%0A%0A` +
+                            `*Client Name:* ${name}%0A` +
+                            `*Phone:* ${phone}%0A` +
+                            `*Service:* ${service}%0A` +
+                            `*No. of Persons:* ${persons}%0A` +
+                            `*Date/Time:* ${datetime}%0A` +
+                            `*Client Address:* ${userAddress}%0A%0A` +
+                            `_Location: Mahabubnagar Pan Chourastha_`;
+
+            const whatsappUrl = `https://wa.me/${myMobile}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
         }
     </script>
 
