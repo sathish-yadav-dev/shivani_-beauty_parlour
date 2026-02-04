@@ -3,292 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivani Luxury Beauty Studio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Shivani Luxury Beauty Studio | Mahabubnagar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #D4AF37;
-            --black: #111;
-            --white: #fff;
-            --soft-bg: #fdfaf7;
+            --gold: #C5A059;
+            --dark-gold: #947231;
+            --black: #0F0F0F;
+            --white: #FFFFFF;
+            --gray: #f4f4f4;
         }
 
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            color: var(--black);
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
         }
 
-        .header {
+        /* Luxury Header */
+        .hero-section {
+            height: 50vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--black)),
+                        url('https://images.unsplash.com/photo-1522337360788-8b13df772ec2?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 30px 20px;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 8px;
             color: var(--gold);
         }
 
-        .header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin: 0;
+        .hero-section p {
             letter-spacing: 4px;
-            text-transform: uppercase;
+            font-weight: 300;
+            font-style: italic;
         }
 
-        .container {
-            max-width: 550px;
-            margin: 0 auto 30px auto;
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 25px;
-            padding: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            border: 2px solid var(--gold);
+        .main-container {
+            max-width: 600px;
+            margin: -60px auto 40px auto;
+            background: var(--white);
+            color: var(--black);
+            border-radius: 30px 30px 10px 10px;
+            padding: 30px;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+        }
+
+        .input-card {
+            background: var(--gray);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 25px;
         }
 
         .section-title {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin: 20px 0 10px 0;
-            border-bottom: 2px solid var(--soft-bg);
-            padding-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            border-left: 4px solid var(--gold);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            color: var(--black);
         }
 
         input, textarea {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 1rem;
+            border-radius: 12px;
+            margin-bottom: 15px;
             box-sizing: border-box;
-            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Service List with Quantity */
-        .service-list {
-            max-height: 350px;
-            overflow-y: auto;
-            border: 1px solid #eee;
-            border-radius: 15px;
+        /* Search & Filter */
+        .search-box {
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            background: var(--white);
+            padding: 10px 0;
+        }
+
+        #serviceSearch {
+            border: 2px solid var(--gold);
             background: #fff;
-            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Service List Styling */
+        .service-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 5px;
         }
 
         .service-item {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 12px 15px;
-            border-bottom: 1px solid #f9f9f9;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: 0.3s;
         }
 
-        .service-info { flex: 1; }
-        .service-name { font-weight: 600; display: block; font-size: 0.95rem; }
-        .service-price { color: var(--gold); font-size: 0.85rem; font-weight: bold; }
+        .service-item:hover {
+            background: #fffdf5;
+        }
 
-        .quantity-controls {
+        .srv-name { font-weight: 600; font-size: 0.95rem; }
+        .srv-price { color: var(--dark-gold); font-size: 0.9rem; display: block; }
+
+        /* Quantity Controls */
+        .qty-controls {
             display: flex;
             align-items: center;
-            gap: 10px;
+            background: var(--black);
+            border-radius: 8px;
+            padding: 4px 8px;
         }
 
         .qty-btn {
-            background: var(--gold);
-            color: white;
+            background: transparent;
+            color: var(--gold);
             border: none;
-            width: 28px;
-            height: 28px;
-            border-radius: 5px;
+            font-size: 1.2rem;
+            width: 30px;
             cursor: pointer;
             font-weight: bold;
         }
 
-        .qty-count {
-            width: 20px;
+        .qty-val {
+            color: white;
+            margin: 0 10px;
+            min-width: 15px;
             text-align: center;
-            font-weight: 600;
         }
 
-        .price-box {
+        /* Total Bar */
+        .total-sticky-bar {
             background: var(--black);
             color: var(--gold);
-            border-radius: 15px;
-            padding: 15px;
+            padding: 20px;
+            border-radius: 20px;
             text-align: center;
-            margin: 20px 0;
+            margin-top: 25px;
         }
 
         .whatsapp-btn {
             width: 100%;
-            background: #25D366;
+            background: linear-gradient(45deg, #25D366, #128C7E);
             color: white;
-            padding: 18px;
+            padding: 20px;
             border: none;
             border-radius: 15px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .footer-note {
-            text-align: center;
-            font-size: 0.85rem;
             margin-top: 15px;
-            color: #444;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
         }
 
-        .designer-credit {
+        .footer {
             text-align: center;
-            color: rgba(255,255,255,0.8);
-            font-size: 0.75rem;
-            padding-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            padding: 30px;
+            background: var(--black);
+            color: #666;
+            font-size: 0.8rem;
         }
+
+        .highlight-text { color: var(--gold); font-weight: 600; }
     </style>
 </head>
 <body>
 
-    <div class="header">
+    <div class="hero-section">
         <h1>SHIVANI</h1>
-        <p style="color: #fff; letter-spacing: 3px; font-weight: 300;">LUXURY BEAUTY STUDIO</p>
+        <p>LUXURY BEAUTY STUDIO</p>
     </div>
 
-    <div class="container">
-        <div class="section-title">Client Information</div>
-        <input type="text" id="custName" placeholder="Full Name">
-        <textarea id="custAddress" rows="2" placeholder="Full Address / Venue Location"></textarea>
-        
-        <div class="section-title">Services & Quantity</div>
-        <input type="text" id="serviceSearch" placeholder="🔍 Search services..." onkeyup="filterServices()" style="border: 2px solid var(--gold);">
+    <div class="main-container">
+        <div class="section-title">1. Your Details</div>
+        <div class="input-card">
+            <input type="text" id="custName" placeholder="What is your full name?">
+            <textarea id="custAddress" rows="2" placeholder="Where should we come? (Full Address in Mahabubnagar)"></textarea>
+            <input type="datetime-local" id="bookTime">
+        </div>
+
+        <div class="section-title">2. Select Services</div>
+        <div class="search-box">
+            <input type="text" id="serviceSearch" placeholder="🔍 Search e.g. 'Facial', 'Makeup', 'Saree'..." onkeyup="filterServices()">
+        </div>
 
         <div class="service-list" id="serviceList">
             </div>
 
-        <div class="section-title">Booking Schedule</div>
-        <input type="datetime-local" id="bookTime">
-
-        <div class="price-box">
-            <span style="font-size: 0.8rem; color: #fff;">Grand Total Estimate</span><br>
-            <span id="totalAmt" style="font-size: 2.2rem; font-weight: 700;">₹ 0</span>
+        <div class="total-sticky-bar">
+            <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Estimated Billing</div>
+            <div id="totalAmt" style="font-size: 2.5rem; font-weight: 700;">₹ 0</div>
         </div>
 
-        <button class="whatsapp-btn" onclick="sendWhatsApp()">Confirm & Book on WhatsApp</button>
-        
-        <div class="footer-note">
-            <strong>SHIVANI BEAUTY PARLOUR</strong><br>
-            📍 Pan Chourastha, Mahabubnagar | 📞 8309660870
-        </div>
-    </div>
+        <button class="whatsapp-btn" onclick="sendWhatsApp()">Confirm & Send via WhatsApp</button>
 
-    <div class="designer-credit">
-        Designed by <strong>SATISH YADAV</strong>
+        <div class="footer">
+            <p>📍 Pan Chourastha, Main Road, Mahabubnagar</p>
+            <p>📞 Booking: <span class="highlight-text">8309660870</span></p>
+            <hr style="border: 0.1px solid #333; margin: 20px 0;">
+            <p style="letter-spacing: 2px;">DESIGNED BY <span class="highlight-text">SATISH YADAV</span></p>
+        </div>
     </div>
 
     <script>
-        // ఇక్కడ నువ్వు 100-200 సర్వీసులు యాడ్ చేసుకోవచ్చు
+        // ఇక్కడ నువ్వు 100+ సర్వీసులు యాడ్ చేసుకోవచ్చు
         const services = [
-            { id: 1, name: "Party Makeup", price: 2500 },
-            { id: 2, name: "Traditional Jada", price: 1000 },
-            { id: 3, name: "Saree Draping", price: 500 },
-            { id: 4, name: "Bridal HD Makeup", price: 8000 },
-            { id: 5, name: "Gold Facial", price: 1500 },
-            { id: 6, name: "Eyebrow Threading", price: 50 },
-            { id: 7, name: "Hair Spa", price: 1000 },
-            { id: 8, name: "Pedicure & Manicure", price: 1200 },
-            { id: 9, name: "Full Arms Waxing", price: 400 },
-            { id: 10, name: "Hair Cut (Step)", price: 600 }
+            { id: 1, cat: "Makeup", name: "Party HD Makeup", price: 3000 },
+            { id: 2, cat: "Makeup", name: "Bridal Luxury Makeup", price: 10000 },
+            { id: 3, cat: "Hair", name: "Traditional Jada Styling", price: 1200 },
+            { id: 4, cat: "Hair", name: "Fancy Hair Cut", price: 600 },
+            { id: 5, cat: "Draping", name: "Saree Draping (Luxury)", price: 500 },
+            { id: 6, cat: "Facial", name: "Gold Glow Facial", price: 1500 },
+            { id: 7, cat: "Facial", name: "Hydra Facial Premium", price: 4000 },
+            { id: 8, cat: "Threading", name: "Eyebrows & UpperLip", price: 80 },
+            { id: 9, cat: "Waxing", name: "Full Body Waxing", price: 2500 },
+            { id: 10, cat: "Nails", name: "Luxury Pedicure", price: 800 }
         ];
 
-        let cart = {}; 
+        let cart = {};
 
         function loadServices() {
-            const listContainer = document.getElementById('serviceList');
-            listContainer.innerHTML = '';
+            const container = document.getElementById('serviceList');
+            container.innerHTML = '';
             services.forEach(s => {
-                const item = document.createElement('div');
-                item.className = 'service-item';
-                item.innerHTML = `
+                const div = document.createElement('div');
+                div.className = 'service-item';
+                div.innerHTML = `
                     <div class="service-info">
-                        <span class="service-name">${s.name}</span>
-                        <span class="service-price">₹${s.price}</span>
+                        <span class="srv-name">${s.name}</span>
+                        <span class="srv-price">₹${s.price}</span>
                     </div>
-                    <div class="quantity-controls">
-                        <button class="qty-btn" onclick="updateQty(${s.id}, -1)">-</button>
-                        <span class="qty-count" id="qty-${s.id}">0</span>
-                        <button class="qty-btn" onclick="updateQty(${s.id}, 1)">+</button>
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="changeQty(${s.id}, -1)">−</button>
+                        <span class="qty-val" id="q-${s.id}">0</span>
+                        <button class="qty-btn" onclick="changeQty(${s.id}, 1)">+</button>
                     </div>
                 `;
-                listContainer.appendChild(item);
+                container.appendChild(div);
             });
         }
 
-        function updateQty(id, change) {
-            if (!cart[id]) cart[id] = 0;
-            cart[id] += change;
+        function changeQty(id, delta) {
+            cart[id] = (cart[id] || 0) + delta;
             if (cart[id] < 0) cart[id] = 0;
-            
-            document.getElementById(`qty-${id}`).innerText = cart[id];
-            calculateTotal();
+            document.getElementById(`q-${id}`).innerText = cart[id];
+            updateTotal();
         }
 
-        function calculateTotal() {
+        function updateTotal() {
             let total = 0;
             services.forEach(s => {
-                if (cart[s.id]) {
-                    total += (s.price * cart[s.id]);
-                }
+                if(cart[s.id]) total += (s.price * cart[s.id]);
             });
-            document.getElementById('totalAmt').innerText = "₹ " + total;
+            document.getElementById('totalAmt').innerText = "₹ " + total.toLocaleString('en-IN');
         }
 
         function filterServices() {
             const term = document.getElementById('serviceSearch').value.toLowerCase();
             const items = document.querySelectorAll('.service-item');
             items.forEach(item => {
-                const name = item.querySelector('.service-name').innerText.toLowerCase();
+                const name = item.querySelector('.srv-name').innerText.toLowerCase();
                 item.style.display = name.includes(term) ? 'flex' : 'none';
             });
         }
 
         function sendWhatsApp() {
             const name = document.getElementById('custName').value;
-            const address = document.getElementById('custAddress').value;
+            const addr = document.getElementById('custAddress').value;
             const time = document.getElementById('bookTime').value;
             const total = document.getElementById('totalAmt').innerText;
             
-            let selectedServices = [];
+            let summary = [];
             services.forEach(s => {
-                if (cart[s.id] > 0) {
-                    selectedServices.push(`${s.name} (Qty: ${cart[s.id]})`);
-                }
+                if(cart[s.id] > 0) summary.push(`${s.name} x${cart[s.id]}`);
             });
 
-            if (!name || selectedServices.length === 0 || !time || !address) {
-                alert("దయచేసి పేరు, అడ్రస్, మరియు సర్వీసెస్ ఎంచుకోండి!");
+            if(!name || summary.length === 0 || !time || !addr) {
+                alert("Please fill all details and select at least one service!");
                 return;
             }
 
             const phone = "918309660870";
-            let msg = `*SHIVANI LUXURY STUDIO - NEW BOOKING*%0A%0A` +
-                      `*Customer:* ${name}%0A` +
-                      `*Address:* ${address}%0A` +
-                      `*Schedule:* ${time}%0A%0A` +
-                      `*Selected Services:*%0A- ${selectedServices.join('%0A- ')}%0A%0A` +
-                      `*Grand Total:* ${total}%0A%0A` +
-                      `Hi Shivani, I want to confirm this booking.`;
+            let msg = `*✨ SHIVANI LUXURY STUDIO BOOKING ✨*%0A%0A` +
+                      `*Client:* ${name}%0A` +
+                      `*Venue:* ${addr}%0A` +
+                      `*Time:* ${time}%0A%0A` +
+                      `*Services Ordered:*%0A- ${summary.join('%0A- ')}%0A%0A` +
+                      `*Total Amount:* ${total}%0A%0A` +
+                      `Hi Shivani, I want to confirm this booking. See you soon!`;
 
             window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
         }
 
-        loadServices();
+        window.onload = loadServices;
     </script>
 </body>
 </html>
