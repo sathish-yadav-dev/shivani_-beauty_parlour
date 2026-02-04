@@ -16,8 +16,8 @@
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -27,42 +27,42 @@
 
         .header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             color: var(--gold);
         }
 
         .header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 0;
-            letter-spacing: 4px;
+            letter-spacing: 6px;
             text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
         .container {
-            max-width: 500px;
-            margin: 0 auto 50px auto;
+            max-width: 550px;
+            margin: 0 auto 30px auto;
             background: rgba(255, 255, 255, 0.98);
-            border-radius: 25px;
+            border-radius: 30px;
             padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
             border: 2px solid var(--gold);
         }
 
         .section-title {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: 700;
             letter-spacing: 2px;
             color: var(--gold);
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin: 25px 0 15px 0;
             border-bottom: 1px solid #eee;
             padding-bottom: 5px;
         }
 
         .input-group {
             margin-bottom: 20px;
-            position: relative;
         }
 
         label {
@@ -82,10 +82,11 @@
             background: #fff;
         }
 
-        input:focus {
-            border-color: var(--gold);
-            outline: none;
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+        /* Search Input Style */
+        #serviceSearch {
+            border: 2px solid var(--gold);
+            margin-bottom: 10px;
+            background-color: #fff9e6;
         }
 
         .price-box {
@@ -97,46 +98,39 @@
             border: 1px solid var(--gold);
         }
 
-        .price-box .amount {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--black);
-        }
-
         .whatsapp-btn {
             width: 100%;
             background: #25D366;
             color: white;
-            padding: 18px;
+            padding: 20px;
             border: none;
             border-radius: 15px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
-            text-transform: uppercase;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
         }
 
         .whatsapp-btn:hover {
             background: #1ebc5a;
-            transform: scale(1.02);
+            transform: translateY(-3px);
         }
 
         .footer-note {
             text-align: center;
-            font-size: 0.8rem;
-            color: #777;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #555;
             margin-top: 20px;
         }
 
-        /* Badge for Packages */
-        .badge {
-            background: var(--gold);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 5px;
-            font-size: 0.7rem;
-            float: right;
+        .designer-credit {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.75rem;
+            padding-bottom: 30px;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -144,118 +138,150 @@
 
     <div class="header">
         <h1>SHIVANI</h1>
-        <p style="color: #fff; letter-spacing: 5px;">LUXURY STUDIO</p>
+        <p style="color: #fff; letter-spacing: 4px; font-weight: 300;">LUXURY BEAUTY STUDIO</p>
     </div>
 
     <div class="container">
         <form id="bookingForm">
-            <div class="section-title">Client Details</div>
+            <div class="section-title">Customer Info</div>
             <div class="input-group">
-                <label>Name</label>
-                <input type="text" id="custName" placeholder="Enter your full name" required>
+                <input type="text" id="custName" placeholder="Enter Your Name" required>
             </div>
 
-            <div class="section-title">Service Selection</div>
+            <div class="section-title">Select Services</div>
+            
             <div class="input-group">
-                <label>Choose Service or Event Package</label>
-                <select id="serviceSelect" onchange="updateUI()">
-                    <option value="" data-price="0">-- Select Option --</option>
-                    <optgroup label="✨ Event Packages (Home Service)">
-                        <option value="Haldi/Function Group Package" data-price="Request">Haldi/Group Package (Custom)</option>
-                        <option value="Full Day Event Booking" data-price="Request">Full Day Studio Team (Premium)</option>
-                        <option value="Half Day Event Booking" data-price="Request">Half Day Studio Team</option>
-                    </optgroup>
-                    <optgroup label="💄 Individual Services">
-                        <option value="Bridal Makeup" data-price="5000">Bridal Makeup - ₹5000</option>
-                        <option value="Party Makeup" data-price="2500">Party Makeup - ₹2500</option>
-                        <option value="Saree Draping" data-price="400">Saree Draping - ₹400</option>
-                        <option value="Traditional Jada" data-price="1000">Traditional Jada - ₹1000</option>
-                        <option value="Luxury Facial" data-price="1500">Luxury Facial - ₹1500</option>
-                    </optgroup>
-                </select>
+                <label>Search for a Service (100+ Options Available)</label>
+                <input type="text" id="serviceSearch" placeholder="Type to search (e.g. Hair, Facial, Waxing...)" onkeyup="filterServices()">
             </div>
 
-            <div id="standardOptions">
+            <div class="input-group">
+                <select id="serviceSelect" onchange="calculate()" size="5" style="height: 150px;">
+                    <option value="" data-price="0">-- Select a Service --</option>
+                    
+                    <optgroup label="Threading">
+                        <option value="Eyebrow Threading" data-price="50">Eyebrow Threading - ₹50</option>
+                        <option value="Upper Lip" data-price="30">Upper Lip - ₹30</option>
+                        <option value="Full Face Threading" data-price="200">Full Face Threading - ₹200</option>
+                    </optgroup>
+
+                    <optgroup label="Facials & Cleanup">
+                        <option value="Fruit Facial" data-price="800">Fruit Facial - ₹800</option>
+                        <option value="Gold Facial" data-price="1500">Gold Facial - ₹1500</option>
+                        <option value="Diamond Facial" data-price="2000">Diamond Facial - ₹2000</option>
+                        <option value="Hydra Facial" data-price="3500">Hydra Facial (Premium) - ₹3500</option>
+                        <option value="Tan Removal" data-price="500">Tan Removal Pack - ₹500</option>
+                    </optgroup>
+
+                    <optgroup label="Hair Care">
+                        <option value="Hair Cut (Basic)" data-price="300">Hair Cut (Basic) - ₹300</option>
+                        <option value="Step Cut / Layer Cut" data-price="600">Step/Layer Cut - ₹600</option>
+                        <option value="Hair Spa" data-price="1000">Hair Spa - ₹1000</option>
+                        <option value="Hair Smoothing" data-price="4000">Hair Smoothing - ₹4000</option>
+                        <option value="Hair Coloring" data-price="1200">Hair Coloring - ₹1200</option>
+                    </optgroup>
+
+                    <optgroup label="Makeup & Styling">
+                        <option value="Bridal Makeup" data-price="10000">Grand Bridal Makeup - ₹10,000</option>
+                        <option value="HD Party Makeup" data-price="3000">HD Party Makeup - ₹3000</option>
+                        <option value="Saree Draping" data-price="500">Saree Draping - ₹500</option>
+                        <option value="Hair Styling" data-price="800">Hair Styling/Jada - ₹800</option>
+                    </optgroup>
+
+                    <optgroup label="Body Care">
+                        <option value="Full Arms Waxing" data-price="400">Full Arms Waxing - ₹400</option>
+                        <option value="Full Legs Waxing" data-price="600">Full Legs Waxing - ₹600</option>
+                        <option value="Pedicure" data-price="700">Luxury Pedicure - ₹700</option>
+                        <option value="Manicure" data-price="500">Luxury Manicure - ₹500</option>
+                    </optgroup>
+
+                    </select>
+            </div>
+
+            <div class="input-group">
                 <div style="display: flex; gap: 15px;">
-                    <div class="input-group" style="flex: 1;">
-                        <label>Total Persons</label>
+                    <div style="flex: 1;">
+                        <label>No. of Persons</label>
                         <input type="number" id="guestCount" value="1" min="1" onchange="calculate()">
                     </div>
-                    <div class="input-group" style="flex: 2;">
-                        <label>Event Date & Time</label>
+                    <div style="flex: 2;">
+                        <label>Date & Time</label>
                         <input type="datetime-local" id="bookTime" required>
                     </div>
                 </div>
             </div>
 
-            <div class="input-group">
-                <label>Event Address / Venue</label>
-                <textarea id="custAddress" rows="2" placeholder="Where should we come?"></textarea>
-            </div>
-
-            <div class="price-box" id="priceDisplay">
-                <span style="font-size: 0.9rem; color: #666;">Estimate Total</span><br>
-                <span class="amount" id="totalAmt">₹ 0</span>
+            <div class="price-box">
+                <span style="font-size: 0.9rem; color: #666;">Total Estimated Amount</span><br>
+                <span id="totalAmt" style="font-size: 2.2rem; font-weight: 700; color: var(--black);">₹ 0</span>
             </div>
 
             <button type="button" class="whatsapp-btn" onclick="sendWhatsApp()">
-                Confirm & Chat on WhatsApp
+                Confirm Appointment (WhatsApp)
             </button>
         </form>
         
         <div class="footer-note">
-            📍 Pan Chourastha, Mahabubnagar | 📞 8309660870
+            <strong>SHIVANI BEAUTY PARLOUR</strong><br>
+            📍 Main Road, Pan Chourastha, Mahabubnagar<br>
+            📞 Contact: +91 8309660870
         </div>
     </div>
 
-    <script>
-        function updateUI() {
-            const select = document.getElementById('serviceSelect');
-            const price = select.options[select.selectedIndex].getAttribute('data-price');
-            const totalDisplay = document.getElementById('totalAmt');
+    <div class="designer-credit">
+        Designed & Developed by <strong>SATISH YADAV</strong> | v1.0
+    </div>
 
-            if (price === "Request") {
-                totalDisplay.innerText = "Price on Request";
-                totalDisplay.style.fontSize = "1.5rem";
-            } else {
-                totalDisplay.style.fontSize = "2rem";
-                calculate();
+    <script>
+        // సర్వీస్ సెర్చ్ లాజిక్
+        function filterServices() {
+            const input = document.getElementById('serviceSearch').value.toLowerCase();
+            const select = document.getElementById('serviceSelect');
+            const options = select.getElementsByTagName('option');
+            const groups = select.getElementsByTagName('optgroup');
+
+            for (let i = 0; i < options.length; i++) {
+                const text = options[i].text.toLowerCase();
+                if (text.includes(input)) {
+                    options[i].style.display = "";
+                } else {
+                    options[i].style.display = "none";
+                }
             }
         }
 
+        // ధర లెక్కించే లాజిక్
         function calculate() {
             const select = document.getElementById('serviceSelect');
-            const price = select.options[select.selectedIndex].getAttribute('data-price');
-            const count = document.getElementById('guestCount').value;
+            const selectedOption = select.options[select.selectedIndex];
+            const price = selectedOption ? selectedOption.getAttribute('data-price') : 0;
+            const count = document.getElementById('guestCount').value || 1;
             
-            if (price !== "Request" && price !== null) {
-                const total = parseInt(price) * parseInt(count);
-                document.getElementById('totalAmt').innerText = "₹ " + (isNaN(total) ? 0 : total);
-            }
+            const total = parseInt(price) * parseInt(count);
+            document.getElementById('totalAmt').innerText = "₹ " + (isNaN(total) ? 0 : total);
         }
 
+        // వాట్సాప్ మెసేజ్ పంపే లాజిక్
         function sendWhatsApp() {
             const phone = "918309660870";
             const name = document.getElementById('custName').value;
             const service = document.getElementById('serviceSelect').value;
             const time = document.getElementById('bookTime').value;
-            const addr = document.getElementById('custAddress').value;
             const count = document.getElementById('guestCount').value;
             const total = document.getElementById('totalAmt').innerText;
 
             if(!name || !service || !time) {
-                alert("Please fill Name, Service and Date!");
+                alert("దయచేసి పేరు, సర్వీస్ మరియు సమయం సెలెక్ట్ చేయండి!");
                 return;
             }
 
-            let msg = `*SHIVANI LUXURY STUDIO BOOKING*%0A%0A` +
-                      `*Customer:* ${name}%0A` +
+            let msg = `*NEW APPOINTMENT - SHIVANI STUDIO*%0A%0A` +
+                      `*Name:* ${name}%0A` +
                       `*Service:* ${service}%0A` +
-                      `*Total Persons:* ${count}%0A` +
-                      `*Schedule:* ${time}%0A` +
-                      `*Venue:* ${addr}%0A` +
-                      `*Estimate:* ${total}%0A%0A` +
-                      `Hi Shivani, I want to confirm this booking. Let's discuss details!`;
+                      `*Persons:* ${count}%0A` +
+                      `*Date/Time:* ${time}%0A` +
+                      `*Total Amount:* ${total}%0A%0A` +
+                      `I want to confirm this booking.`;
 
             window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
         }
