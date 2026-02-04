@@ -3,158 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivani Luxury Studio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Shivani Luxury Beauty Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #B8860B; --black: #1a1a1a; }
-        body { margin: 0; font-family: 'Poppins', sans-serif; background: #f4f4f4; display: flex; flex-direction: column; align-items: center; }
-        
-        header { background: var(--black); width: 100%; color: var(--gold); text-align: center; padding: 12px 0; border-bottom: 3px solid var(--gold); }
-        header h1 { margin: 0; font-size: 1.3rem; letter-spacing: 2px; }
+        :root {
+            --gold: #D4AF37;
+            --black: #111;
+            --white: #fff;
+            --soft-bg: #fdfaf7;
+        }
 
-        .main-app { width: 92%; max-width: 450px; background: #fff; margin: 15px 0; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding-bottom: 10px; }
-        .section { padding: 15px; }
-        input { width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-size: 0.9rem; }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: var(--black);
+        }
 
-        /* Search Section */
-        #search { border: 2px solid var(--gold); outline: none; background: #fff9e6; }
-        
-        /* Hidden by default, shown when searching */
-        .service-results { max-height: 200px; overflow-y: auto; display: none; margin: 0 15px; border: 1px solid #eee; border-radius: 10px; background: #fff; }
-        
-        /* Selected Items List */
-        .cart-title { font-size: 0.8rem; font-weight: 700; color: #888; margin: 10px 15px 5px; text-transform: uppercase; }
-        .selected-list { margin: 0 15px; }
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--gold);
+        }
 
-        .srv-card { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #f9f9f9; }
-        .srv-info b { font-size: 0.85rem; }
-        .srv-info span { color: var(--gold); font-size: 0.8rem; }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin: 0;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
 
-        .qty-box { display: flex; align-items: center; gap: 10px; }
-        .btn-q { background: var(--black); color: var(--gold); border: none; width: 24px; height: 24px; border-radius: 5px; cursor: pointer; }
+        .container {
+            max-width: 550px;
+            margin: 0 auto 30px auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 2px solid var(--gold);
+        }
 
-        .footer-billing { padding: 15px; border-top: 1px solid #eee; margin-top: 10px; }
-        .total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; padding: 14px; border-radius: 12px; font-weight: 600; font-size: 1rem; cursor: pointer; }
-        .credit { font-size: 0.7rem; color: #999; text-align: center; padding: 10px; }
+        .section-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin: 20px 0 10px 0;
+            border-bottom: 2px solid var(--soft-bg);
+            padding-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        /* Service List with Quantity */
+        .service-list {
+            max-height: 350px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            background: #fff;
+            margin-bottom: 20px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 15px;
+            border-bottom: 1px solid #f9f9f9;
+        }
+
+        .service-info { flex: 1; }
+        .service-name { font-weight: 600; display: block; font-size: 0.95rem; }
+        .service-price { color: var(--gold); font-size: 0.85rem; font-weight: bold; }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qty-btn {
+            background: var(--gold);
+            color: white;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .qty-count {
+            width: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .price-box {
+            background: var(--black);
+            color: var(--gold);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            background: #25D366;
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        .designer-credit {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.75rem;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>SHIVANI LUXURY STUDIO</h1>
-        <p style="margin:0; font-size:0.6rem; color:#fff;">MAHABUBNAGAR | 8309660870</p>
-    </header>
+    <div class="header">
+        <h1>SHIVANI</h1>
+        <p style="color: #fff; letter-spacing: 3px; font-weight: 300;">LUXURY BEAUTY STUDIO</p>
+    </div>
 
-    <div class="main-app">
-        <div class="section">
-            <input type="text" id="custName" placeholder="Customer Name">
-            <input type="text" id="custAddr" placeholder="Address / Location">
-            <input type="datetime-local" id="bookTime">
-            <input type="text" id="search" placeholder="🔍 Type to search services (e.g. Makeup)" onkeyup="filter()">
+    <div class="container">
+        <div class="section-title">Client Information</div>
+        <input type="text" id="custName" placeholder="Full Name">
+        <textarea id="custAddress" rows="2" placeholder="Full Address / Venue Location"></textarea>
+        
+        <div class="section-title">Services & Quantity</div>
+        <input type="text" id="serviceSearch" placeholder="🔍 Search services..." onkeyup="filterServices()" style="border: 2px solid var(--gold);">
+
+        <div class="service-list" id="serviceList">
+            </div>
+
+        <div class="section-title">Booking Schedule</div>
+        <input type="datetime-local" id="bookTime">
+
+        <div class="price-box">
+            <span style="font-size: 0.8rem; color: #fff;">Grand Total Estimate</span><br>
+            <span id="totalAmt" style="font-size: 2.2rem; font-weight: 700;">₹ 0</span>
         </div>
 
-        <div class="service-results" id="results"></div>
-
-        <div class="cart-title" id="cartLabel" style="display:none;">Selected Services</div>
-        <div class="selected-list" id="cartList"></div>
-
-        <div class="footer-billing">
-            <div class="total-row">
-                <span style="font-weight: 600;">Total:</span>
-                <span id="total" style="font-size: 1.4rem; font-weight: 700; color: var(--gold);">₹ 0</span>
-            </div>
-            <button class="whatsapp-btn" onclick="order()">Book on WhatsApp</button>
+        <button class="whatsapp-btn" onclick="sendWhatsApp()">Confirm & Book on WhatsApp</button>
+        
+        <div class="footer-note">
+            <strong>SHIVANI BEAUTY PARLOUR</strong><br>
+            📍 Pan Chourastha, Mahabubnagar | 📞 8309660870
         </div>
     </div>
 
-    <div class="credit">Designed by <b>SATISH YADAV</b></div>
+    <div class="designer-credit">
+        Designed by <strong>SATISH YADAV</strong>
+    </div>
 
     <script>
+        // ఇక్కడ నువ్వు 100-200 సర్వీసులు యాడ్ చేసుకోవచ్చు
         const services = [
-            { id: 1, n: "Party Makeup", p: 2500 },
-            { id: 2, n: "Bridal Makeup", p: 8000 },
-            { id: 3, n: "Traditional Jada", p: 1200 },
-            { id: 4, n: "Saree Draping", p: 500 },
-            { id: 5, n: "Gold Facial", p: 1500 },
-            { id: 6, n: "Hair Cut", p: 500 },
-            { id: 7, n: "Eyebrows", p: 50 }
+            { id: 1, name: "Party Makeup", price: 2500 },
+            { id: 2, name: "Traditional Jada", price: 1000 },
+            { id: 3, name: "Saree Draping", price: 500 },
+            { id: 4, name: "Bridal HD Makeup", price: 8000 },
+            { id: 5, name: "Gold Facial", price: 1500 },
+            { id: 6, name: "Eyebrow Threading", price: 50 },
+            { id: 7, name: "Hair Spa", price: 1000 },
+            { id: 8, name: "Pedicure & Manicure", price: 1200 },
+            { id: 9, name: "Full Arms Waxing", price: 400 },
+            { id: 10, name: "Hair Cut (Step)", price: 600 }
         ];
 
-        let cart = {};
+        let cart = {}; 
 
-        function filter() {
-            let val = document.getElementById('search').value.toLowerCase();
-            let res = document.getElementById('results');
-            
-            if (val.length > 0) {
-                res.style.display = 'block';
-                let filtered = services.filter(s => s.n.toLowerCase().includes(val));
-                res.innerHTML = filtered.map(s => `
-                    <div class="srv-card" onclick="addToCart(${s.id})">
-                        <div class="srv-info"><b>${s.n}</b><br><span>₹${s.p}</span></div>
-                        <span style="color:var(--gold); font-size:1.2rem; font-weight:bold;">+</span>
+        function loadServices() {
+            const listContainer = document.getElementById('serviceList');
+            listContainer.innerHTML = '';
+            services.forEach(s => {
+                const item = document.createElement('div');
+                item.className = 'service-item';
+                item.innerHTML = `
+                    <div class="service-info">
+                        <span class="service-name">${s.name}</span>
+                        <span class="service-price">₹${s.price}</span>
                     </div>
-                `).join('');
-            } else {
-                res.style.display = 'none';
-            }
-        }
-
-        function addToCart(id) {
-            cart[id] = (cart[id] || 0) + 1;
-            document.getElementById('search').value = '';
-            document.getElementById('results').style.display = 'none';
-            updateUI();
-        }
-
-        function changeQty(id, d) {
-            cart[id] += d;
-            if (cart[id] <= 0) delete cart[id];
-            updateUI();
-        }
-
-        function updateUI() {
-            const list = document.getElementById('cartList');
-            const label = document.getElementById('cartLabel');
-            let total = 0;
-            let keys = Object.keys(cart);
-
-            label.style.display = keys.length > 0 ? 'block' : 'none';
-            
-            list.innerHTML = keys.map(id => {
-                let s = services.find(item => item.id == id);
-                total += (s.p * cart[id]);
-                return `
-                    <div class="srv-card">
-                        <div class="srv-info"><b>${s.n}</b><br><span>₹${s.p}</span></div>
-                        <div class="qty-box">
-                            <button class="btn-q" onclick="changeQty(${id},-1)">-</button>
-                            <span style="font-weight:600">${cart[id]}</span>
-                            <button class="btn-q" onclick="changeQty(${id},1)">+</button>
-                        </div>
+                    <div class="quantity-controls">
+                        <button class="qty-btn" onclick="updateQty(${s.id}, -1)">-</button>
+                        <span class="qty-count" id="qty-${s.id}">0</span>
+                        <button class="qty-btn" onclick="updateQty(${s.id}, 1)">+</button>
                     </div>
                 `;
-            }).join('');
-            
-            document.getElementById('total').innerText = "₹ " + total;
+                listContainer.appendChild(item);
+            });
         }
 
-        function order() {
-            const n = document.getElementById('custName').value;
-            const a = document.getElementById('custAddr').value;
-            const t = document.getElementById('bookTime').value;
-            let items = [];
-            Object.keys(cart).forEach(id => {
-                let s = services.find(item => item.id == id);
-                items.push(`${s.n} (x${cart[id]})`);
+        function updateQty(id, change) {
+            if (!cart[id]) cart[id] = 0;
+            cart[id] += change;
+            if (cart[id] < 0) cart[id] = 0;
+            
+            document.getElementById(`qty-${id}`).innerText = cart[id];
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            services.forEach(s => {
+                if (cart[s.id]) {
+                    total += (s.price * cart[s.id]);
+                }
+            });
+            document.getElementById('totalAmt').innerText = "₹ " + total;
+        }
+
+        function filterServices() {
+            const term = document.getElementById('serviceSearch').value.toLowerCase();
+            const items = document.querySelectorAll('.service-item');
+            items.forEach(item => {
+                const name = item.querySelector('.service-name').innerText.toLowerCase();
+                item.style.display = name.includes(term) ? 'flex' : 'none';
+            });
+        }
+
+        function sendWhatsApp() {
+            const name = document.getElementById('custName').value;
+            const address = document.getElementById('custAddress').value;
+            const time = document.getElementById('bookTime').value;
+            const total = document.getElementById('totalAmt').innerText;
+            
+            let selectedServices = [];
+            services.forEach(s => {
+                if (cart[s.id] > 0) {
+                    selectedServices.push(`${s.name} (Qty: ${cart[s.id]})`);
+                }
             });
 
-            if(!n || items.length === 0 || !t) return alert("Please fill all details!");
+            if (!name || selectedServices.length === 0 || !time || !address) {
+                alert("దయచేసి పేరు, అడ్రస్, మరియు సర్వీసెస్ ఎంచుకోండి!");
+                return;
+            }
 
-            let msg = `*Shivani Studio Booking*%0A*Name:* ${n}%0A*Address:* ${a}%0A*Time:* ${t}%0A*Services:* ${items.join(', ')}%0A*Total:* ${document.getElementById('total').innerText}`;
-            window.open(`https://wa.me/918309660870?text=${msg}`);
+            const phone = "918309660870";
+            let msg = `*SHIVANI LUXURY STUDIO - NEW BOOKING*%0A%0A` +
+                      `*Customer:* ${name}%0A` +
+                      `*Address:* ${address}%0A` +
+                      `*Schedule:* ${time}%0A%0A` +
+                      `*Selected Services:*%0A- ${selectedServices.join('%0A- ')}%0A%0A` +
+                      `*Grand Total:* ${total}%0A%0A` +
+                      `Hi Shivani, I want to confirm this booking.`;
+
+            window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
         }
+
+        loadServices();
     </script>
 </body>
 </html>
