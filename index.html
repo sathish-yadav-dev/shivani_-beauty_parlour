@@ -3,100 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivani Beauty Parlour - Luxury Salon</title>
+    <title>Shivani Beauty Parlour | Luxury Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Luxury Styling */
         :root {
-            --gold: #D4AF37;
-            --dark-bg: #0a0a0a;
-            --text-light: #f4f4f4;
+            --primary-gold: #c5a059;
+            --soft-white: #fafafa;
+            --deep-black: #1a1a1a;
+            --glass: rgba(255, 255, 255, 0.9);
         }
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fff;
-            color: #333;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--soft-white);
+            color: var(--deep-black);
+            line-height: 1.6;
         }
 
-        /* Header Section */
+        /* Hero Header Section */
         header {
-            background-color: var(--dark-bg);
-            color: var(--gold);
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80'); /* బ్యూటీ పార్లర్ బ్యాక్ గ్రౌండ్ ఇమేజ్ */
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 50px 20px;
-            border-bottom: 4px solid var(--gold);
+            color: white;
+            padding: 20px;
         }
 
         header h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            margin: 0;
-            font-family: 'Georgia', serif;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            color: var(--primary-gold);
         }
 
-        header p {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-top: 10px;
-            font-style: italic;
+        header .address {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            font-weight: 300;
+            opacity: 0.9;
         }
 
-        /* Services Section */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
+        /* Booking Form Section */
+        .booking-container {
+            max-width: 600px;
+            margin: -50px auto 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
         }
 
-        .section-title {
+        .booking-container h2 {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--dark-bg);
-            text-decoration: underline;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 30px;
+            color: var(--deep-black);
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+        .form-group {
+            margin-bottom: 20px;
         }
 
-        .service-card {
-            background: #fff;
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
             border: 1px solid #ddd;
-            padding: 20px;
-            text-align: center;
-            transition: 0.3s;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            font-size: 1rem;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.3s;
         }
 
-        .service-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
+        input:focus, select:focus {
+            border-color: var(--primary-gold);
         }
 
-        .service-card h3 {
-            color: var(--gold);
-            margin-bottom: 10px;
+        .whatsapp-btn {
+            width: 100%;
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
         }
 
-        .service-card p {
-            font-size: 0.95rem;
-            color: #666;
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: scale(1.02);
         }
 
         footer {
-            background: var(--dark-bg);
-            color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 50px;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+            .booking-container { margin: -30px 15px 30px 15px; padding: 25px; }
         }
     </style>
 </head>
@@ -104,51 +140,85 @@
 
     <header>
         <h1>SHIVANI BEAUTY PARLOUR</h1>
-        <p>mahabubnagar pan chourasta</p>
+        <div class="address">మహబూబ్ నగర్ పంచవర్స్తా</div>
     </header>
 
-    <div class="container">
-        <h2 class="section-title">మా సేవలు (Our Services)</h2>
+    <section class="booking-container">
+        <h2>Book Your Luxury Session</h2>
         
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Threading</h3>
-                <p>Eyebrows, Upper lip, and Forehead threading with precision.</p>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label>మీ పేరు (Your Name)</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
             </div>
-            <div class="service-card">
-                <h3>Facials</h3>
-                <p>Gold, Fruit, Pearl, and Hydra Facials for a glowing skin.</p>
+
+            <div class="form-group">
+                <label>ఫోన్ నెంబర్ (Phone Number)</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
             </div>
-            <div class="service-card">
-                <h3>Hair Cuts</h3>
-                <p>Layer cut, Step cut, Bob cut, and more trendy styles.</p>
+
+            <div class="form-group">
+                <label>కావలసిన సేవ (Select Service)</label>
+                <select id="service">
+                    <option value="Threading">Threading</option>
+                    <option value="Luxury Facial">Luxury Facial</option>
+                    <option value="Bridal Makeup">Bridal Makeup</option>
+                    <option value="Hair Cut & Styling">Hair Cut & Styling</option>
+                    <option value="Manicure/Pedicure">Manicure & Pedicure</option>
+                    <option value="Waxing">Full Body Waxing</option>
+                </select>
             </div>
-            <div class="service-card">
-                <h3>Hair Spa & Color</h3>
-                <p>Deep conditioning spa and professional hair coloring.</p>
+
+            <div class="form-group">
+                <label>ఎంతమందికి? (No. of Persons)</label>
+                <input type="number" id="persons" min="1" value="1">
             </div>
-            <div class="service-card">
-                <h3>Manicure & Pedicure</h3>
-                <p>Complete hand and foot care with luxury massage.</p>
+
+            <div class="form-group">
+                <label>తేదీ మరియు సమయం (Date & Time)</label>
+                <input type="datetime-local" id="datetime" required>
             </div>
-            <div class="service-card">
-                <h3>Waxing</h3>
-                <p>Full body, arms, and legs waxing (Honey & Rica).</p>
-            </div>
-            <div class="service-card">
-                <h3>Bridal Makeup</h3>
-                <p>Grand look for your big day with premium international brands.</p>
-            </div>
-            <div class="service-card">
-                <h3>Hair Straightening</h3>
-                <p>Permanent smoothing and keratin treatments.</p>
-            </div>
-        </div>
-    </div>
+
+            <button type="button" class="whatsapp-btn" onclick="sendToWhatsApp()">
+                Book on WhatsApp
+            </button>
+        </form>
+    </section>
 
     <footer>
-        <p>&copy; 2026 Shivani Beauty Parlour - Quality & Luxury</p>
+        <p>&copy; 2026 Shivani Beauty Parlour. Designed for Perfection.</p>
     </footer>
+
+    <script>
+        function sendToWhatsApp() {
+            // మీ వాట్సాప్ నెంబర్ ఇక్కడ మార్చండి (Country code 91 తో కలిపి)
+            const myNumber = "918309660870"; 
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const persons = document.getElementById('persons').value;
+            const datetime = document.getElementById('datetime').value;
+
+            if(name == "" || phone == "" || datetime == "") {
+                alert("దయచేసి అన్ని వివరాలు నింపండి!");
+                return;
+            }
+
+            // మెసేజ్ ఫార్మాట్
+            const message = `*కొత్త బుకింగ్ అపాయింట్‌మెంట్*%0A%0A` +
+                            `*పేరు:* ${name}%0A` +
+                            `*ఫోన్:* ${phone}%0A` +
+                            `*సర్వీస్:* ${service}%0A` +
+                            `*మనుషులు:* ${persons}%0A` +
+                            `*సమయం:* ${datetime}%0A%0A` +
+                            `_శివాని బ్యూటీ పార్లర్, మహబూబ్ నగర్_`;
+
+            // వాట్సాప్ లింక్ ఓపెన్ అవుతుంది
+            const url = `https://wa.me/${myNumber}?text=${message}`;
+            window.open(url, '_blank').focus();
+        }
+    </script>
 
 </body>
 </html>
