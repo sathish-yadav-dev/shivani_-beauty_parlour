@@ -3,47 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivani Beauty Parlour</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Welcome to Shivani Beauty Parlour</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
+        :root {
+            --gold: #D4AF37;
+            --black: #1a1a1a;
         }
 
-        /* Simple & Neat Header */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fcfaf7;
+            color: var(--black);
+        }
+
+        /* Attractive Header */
         header {
+            background-color: var(--black);
+            color: var(--gold);
             text-align: center;
-            padding: 40px 20px;
-            background: #fff;
-            border-bottom: 1px solid #eee;
+            padding: 50px 20px;
+            border-bottom: 5px solid var(--gold);
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin: 0;
-            color: #1a1a1a;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
-        header p {
-            font-size: 1rem;
-            color: #666;
-            margin-top: 5px;
+        header .address-box {
+            color: #fff;
+            margin-top: 10px;
+            font-size: 1.1rem;
         }
 
-        /* Form Container */
-        .container {
-            max-width: 500px;
+        /* Main Form Container */
+        .booking-container {
+            max-width: 550px;
             margin: 30px auto;
             background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .input-group {
@@ -54,172 +58,214 @@
         label {
             display: block;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin-bottom: 8px;
-            color: #555;
+            color: #444;
         }
 
         input, textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1rem;
             box-sizing: border-box;
-            outline: none;
         }
 
-        input:focus {
-            border-color: #1a1a1a;
-        }
-
-        /* Search Results Area */
+        /* Search List */
         #serviceList {
             position: absolute;
             width: 100%;
-            background: white;
+            background: #fff;
             border: 1px solid #ddd;
-            border-top: none;
-            border-radius: 0 0 8px 8px;
+            border-radius: 0 0 10px 10px;
             max-height: 200px;
             overflow-y: auto;
             z-index: 100;
             display: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         #serviceList div {
-            padding: 10px 15px;
+            padding: 12px;
             cursor: pointer;
-            font-size: 0.95rem;
+            border-bottom: 1px solid #f9f9f9;
         }
 
         #serviceList div:hover {
-            background-color: #f0f0f0;
+            background: #fff9f0;
+            color: var(--gold);
+        }
+
+        /* Bill Amount Display */
+        .bill-box {
+            background: #fff9f0;
+            border: 2px dashed var(--gold);
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .bill-box span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
         }
 
         .btn-whatsapp {
             width: 100%;
             background-color: #25D366;
             color: white;
-            padding: 15px;
+            padding: 18px;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
             cursor: pointer;
-            margin-top: 10px;
+            transition: 0.3s;
         }
 
         .btn-whatsapp:hover {
             background-color: #1ebd5b;
+            transform: translateY(-2px);
         }
 
         footer {
             text-align: center;
+            padding: 20px;
             font-size: 0.8rem;
-            color: #999;
-            margin-top: 20px;
-            padding-bottom: 30px;
+            color: #888;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Shivani Beauty Parlour</h1>
-        <p>Mahabubnagar Pan Chourastha</p>
+        <h1>Welcome to Shivani Beauty Parlour</h1>
+        <div class="address-box">
+            <b>Address:</b> Mahabubnagar Pan Chourastha
+        </div>
     </header>
 
-    <div class="container">
+    <div class="booking-container">
         <form id="bookingForm">
             <div class="input-group">
-                <label>Name</label>
-                <input type="text" id="custName" placeholder="Your Name" required>
+                <label>Your Name</label>
+                <input type="text" id="custName" placeholder="Enter your name" required>
             </div>
 
             <div class="input-group">
-                <label>Search Service (Jada, Makeup, Saree, etc.)</label>
-                <input type="text" id="serviceSearch" placeholder="Type to search..." onkeyup="filterServices()">
+                <label>Search & Select Service</label>
+                <input type="text" id="serviceSearch" placeholder="Search (Makeup, Jada, Facial...)" onkeyup="filterServices()">
                 <div id="serviceList"></div>
             </div>
 
-            <div style="display: flex; gap: 10px;">
+            <div style="display: flex; gap: 15px;">
                 <div class="input-group" style="flex: 1;">
-                    <label>Persons</label>
-                    <input type="number" id="count" value="1" min="1">
+                    <label>No. of Persons</label>
+                    <input type="number" id="guestCount" value="1" min="1" onchange="calculateTotal()">
                 </div>
                 <div class="input-group" style="flex: 2;">
                     <label>Date & Time</label>
-                    <input type="datetime-local" id="dateTime" required>
+                    <input type="datetime-local" id="bookTime" required>
                 </div>
             </div>
 
             <div class="input-group">
-                <label>Your Address</label>
-                <textarea id="address" rows="3" placeholder="Enter full address for Home Service"></textarea>
+                <label>Your Address (For Home Service)</label>
+                <textarea id="custAddress" rows="3" placeholder="Enter your complete home address"></textarea>
             </div>
 
-            <button type="button" class="btn-whatsapp" onclick="sendWhatsApp()">
-                Book on WhatsApp
+            <div class="bill-box">
+                Estimated Total Amount: <br>
+                <span>₹ <span id="totalAmount">0</span></span>
+            </div>
+
+            <button type="button" class="btn-whatsapp" onclick="sendToWhatsApp()">
+                Open WhatsApp Booking
             </button>
         </form>
     </div>
 
     <footer>
-        &copy; 2026 Shivani Beauty Parlour
+        &copy; 2026 Shivani Beauty Parlour | Excellence in Beauty
     </footer>
 
     <script>
-        // సర్వీసుల లిస్ట్
+        // సర్వీసులు మరియు వాటి ధరలు (ఇక్కడ మీరు రేట్లు మార్చుకోవచ్చు)
         const services = [
-            "Traditional Jada", "Poola Jada", "Bridal Makeup", "Haldi Makeup", 
-            "Saree Draping", "Saree Pleating", "Mehendi", "Hair Styling", 
-            "Facial", "Hair Cut", "Threading", "Waxing"
+            { name: "Bridal Makeup", price: 5000 },
+            { name: "Haldi / Sangeet Makeup", price: 2500 },
+            { name: "Traditional Jada (Braid)", price: 800 },
+            { name: "Poola Jada (Flower Braid)", price: 1500 },
+            { name: "Saree Draping", price: 400 },
+            { name: "Luxury Gold Facial", price: 1200 },
+            { name: "Hydra Facial", price: 2000 },
+            { name: "Mehendi (Full Hand)", price: 1000 },
+            { name: "Hair Cut & Styling", price: 600 },
+            { name: "Threading & Waxing", price: 500 }
         ];
 
+        let selectedPrice = 0;
+        const searchInput = document.getElementById('serviceSearch');
+        const serviceList = document.getElementById('serviceList');
+
         function filterServices() {
-            const input = document.getElementById('serviceSearch');
-            const list = document.getElementById('serviceList');
-            const term = input.value.toLowerCase();
-            list.innerHTML = '';
-            
+            const term = searchInput.value.toLowerCase();
+            serviceList.innerHTML = '';
             if (term.length > 0) {
-                const filtered = services.filter(s => s.toLowerCase().includes(term));
+                const filtered = services.filter(s => s.name.toLowerCase().includes(term));
                 if (filtered.length > 0) {
-                    list.style.display = 'block';
+                    serviceList.style.display = 'block';
                     filtered.forEach(s => {
                         const div = document.createElement('div');
-                        div.innerText = s;
+                        div.innerText = `${s.name} - ₹${s.price}`;
                         div.onclick = () => {
-                            input.value = s;
-                            list.style.display = 'none';
+                            searchInput.value = s.name;
+                            selectedPrice = s.price;
+                            serviceList.style.display = 'none';
+                            calculateTotal();
                         };
-                        list.appendChild(div);
+                        serviceList.appendChild(div);
                     });
-                } else { list.style.display = 'none'; }
-            } else { list.style.display = 'none'; }
+                } else { serviceList.style.display = 'none'; }
+            } else { serviceList.style.display = 'none'; }
         }
 
-        function sendWhatsApp() {
-            const phone = "919000000000"; // మీ నంబర్ ఇక్కడ ఇవ్వండి
+        function calculateTotal() {
+            const count = document.getElementById('guestCount').value;
+            const total = selectedPrice * count;
+            document.getElementById('totalAmount').innerText = total;
+        }
+
+        function sendToWhatsApp() {
+            const myNum = "918309660870"; // మీ నెంబర్ ఇక్కడ ఇవ్వండి
             const name = document.getElementById('custName').value;
-            const service = document.getElementById('serviceSearch').value;
-            const persons = document.getElementById('count').value;
-            const time = document.getElementById('dateTime').value;
-            const addr = document.getElementById('address').value;
+            const service = searchInput.value;
+            const count = document.getElementById('guestCount').value;
+            const time = document.getElementById('bookTime').value;
+            const addr = document.getElementById('custAddress').value;
+            const total = document.getElementById('totalAmount').innerText;
 
             if(!name || !service || !time || !addr) {
-                alert("Please fill all details!");
+                alert("దయచేసి అన్ని వివరాలు నింపండి!");
                 return;
             }
 
-            const msg = `*New Booking*%0A*Name:* ${name}%0A*Service:* ${service}%0A*Persons:* ${persons}%0A*Time:* ${time}%0A*Address:* ${addr}`;
-            window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+            const msg = `*NEW BOOKING - SHIVANI PARLOUR*%0A%0A` +
+                        `*Customer:* ${name}%0A` +
+                        `*Service:* ${service}%0A` +
+                        `*Persons:* ${count}%0A` +
+                        `*Total Amount:* ₹${total}%0A` +
+                        `*Date/Time:* ${time}%0A` +
+                        `*Address:* ${addr}`;
+
+            window.open(`https://wa.me/${myNum}?text=${msg}`, '_blank');
         }
 
         document.onclick = (e) => {
-            if (e.target.id !== 'serviceSearch') document.getElementById('serviceList').style.display = 'none';
+            if (e.target !== searchInput) serviceList.style.display = 'none';
         };
     </script>
 </body>
